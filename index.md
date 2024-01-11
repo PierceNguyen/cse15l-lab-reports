@@ -1,7 +1,7 @@
-#Lab 1 Remote Access and FileSystem
+# Lab 1 Remote Access and FileSystem
 
-##Command: cd
+## Command: cd
 
-##Command: ls
+## Command: ls
 
-##Command: cat
+## Command: cat
