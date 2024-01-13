@@ -1,4 +1,4 @@
-# Lab 1 Remote Access and FileSystem
+# Lab 1 Remote Access and FileSystem <sup><sub>Pierce Nguyen</sub></sup>
 
 This week in CSE15L we learned various terminal commands such as ``cd``, ``ls`` and ``cat``. This lab report outlines the three commands and various arguments that can be passed for them below. 
 
