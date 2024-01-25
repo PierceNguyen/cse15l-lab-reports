@@ -1,5 +1,4 @@
 # Lab 2 Servers and SSH Keys
-<div style="page-break-after: always"></div>
 
 ## Background and Code
 
@@ -86,6 +85,8 @@ authorized_keys
 /home/linux/ieng6/oce/4m/phn014/.ssh
 ```
 Here we use ls to list the files in the .ssh subdirectory and can see that our public key is named authorized_keys. Additionally by printing the working directory we can see that our keys absolute path is: /home/linux/ieng6/oce/4m/phn014/.ssh/authorized_keys.
+
+<div style="page-break-after: always"></div>
 
 # Lab 1 Remote Access and FileSystem
 
