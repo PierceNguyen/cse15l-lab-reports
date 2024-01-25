@@ -1,3 +1,91 @@
+# Lab 2 Servers and SSH Keys
+<div style="page-break-after: always"></div>
+
+## Background and Code
+
+For this lab we created a chat server which has a message board where various users can post messages to the board. The code for the server is below:
+
+```
+import java.io.IOException;
+import java.net.URI;
+import java.util.ArrayList;
+
+class Handler implements URLHandler {
+    // The one bit of state on the server: a number that will be manipulated by
+    // various requests.
+    ArrayList<String> messageBoard = new ArrayList<String>();
+    public String handleRequest(URI url) {
+        if (url.getPath().equals("/")) {
+            String returnString = new String();
+            for(int i = 0; i < messageBoard.size();i++){
+                returnString = returnString + messageBoard.get(i);
+            }
+            return String.format("Message Board:\n\n"+ returnString);
+        }
+        else {
+            if (url.getPath().contains("/add-message")) {
+                String[] parameters = url.getQuery().split("&");
+                String[] message = parameters[0].split("=");
+                String[] user = parameters[1].split("=");
+                messageBoard.add(user[1] + ": " + message[1] + "\n");
+                String returnString = new String();
+                for(int i = 0; i < messageBoard.size();i++){
+                    returnString = returnString + messageBoard.get(i);
+                }
+                return String.format("Message Board:\n\n"+ returnString);
+            }
+            return "404 Not Found!";
+        }
+    }
+}
+
+class ChatServer {
+    public static void main(String[] args) throws IOException {
+        if(args.length == 0){
+            System.out.println("Missing port number! Try any number between 1024 to 49151");
+            return;
+        }
+        int port = Integer.parseInt(args[0]);
+        Server.start(port, new Handler());
+    }
+}
+```
+## Demonstration of ChatServer
+First message being sent:
+![alt text](https://github.com/PierceNguyen/cse15l-lab-reports/blob/main/Images/Lab2/addMessage-ex1.png?raw=true)
+When going to this url the method handleRequest is called with the url: http://localhost:4000/add-message?s=Hello&user=jpolitz as its parameter. Since the path is /add-message after the host, the else statement gets called which then changes the class variable messageBoard to now include a new string with the format: user: message or in this case jpolitz: Hello. Then the entire Arraylist<String> is printed to the website. The only class variable that changes is the messageBoard variable. 
+
+Second message being sent:
+![alt text](https://github.com/PierceNguyen/cse15l-lab-reports/blob/main/Images/Lab2/addMessage-ex2.png?raw=true)
+When going to this url the method handleRequest is called with the url: localhost:4000/add-message?s=How%20are%20you&user=yash as its parameter. Since the path is /add-message after the host, the else statement gets called which then changes the class variable messageBoard to now include a new string with the format: user: message or in this case yash: How are you. Then the entire Arraylist<String> is printed to the website. The only class variable that changes is the messageBoard variable. 
+
+## Part 2
+```
+pninv@PHN-Evo MINGW64 ~/.ssh
+$ ls
+id_ed25519  id_ed25519.pub  known_hosts
+
+pninv@PHN-Evo MINGW64 ~/.ssh
+$ pwd
+/c/Users/pninv/.ssh
+```
+
+```
+pninv@PHN-Evo MINGW64 ~/.ssh
+$ ssh phn014@ieng6.ucsd.edu
+Last login: Thu Jan 25 14:09:26 2024 from 100.81.32.60
+quota: Cannot resolve mountpoint path /home/linux/ieng6/cs120wi24/public/.snapshot/daily.2023-12-28_0010: Stale file handle
+Hello phn014, you are currently logged into ieng6-203.ucsd.edu
+```
+
+```
+[phn014@ieng6-203]:~:40$ cd .ssh
+[phn014@ieng6-203]:.ssh:41$ ls
+authorized_keys
+[phn014@ieng6-203]:.ssh:42$ pwd
+/home/linux/ieng6/oce/4m/phn014/.ssh
+```
+
 # Lab 1 Remote Access and FileSystem
 
 This week in CSE15L we learned various terminal commands such as ``cd``, ``ls`` and ``cat``. This lab report outlines the three commands and various arguments that can be passed for them below. 
