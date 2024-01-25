@@ -69,7 +69,7 @@ pninv@PHN-Evo MINGW64 ~/.ssh
 $ pwd
 /c/Users/pninv/.ssh
 ```
-
+Here we use ls to list the files in the .ssh subdirectory and can see that our private key ends with a .pub. Additionally by printing the working directory we can see that our keys absolute path is: /c/Users/pninv/.ssh/id_ed25519.pub. 
 ```
 pninv@PHN-Evo MINGW64 ~/.ssh
 $ ssh phn014@ieng6.ucsd.edu
@@ -77,7 +77,7 @@ Last login: Thu Jan 25 14:09:26 2024 from 100.81.32.60
 quota: Cannot resolve mountpoint path /home/linux/ieng6/cs120wi24/public/.snapshot/daily.2023-12-28_0010: Stale file handle
 Hello phn014, you are currently logged into ieng6-203.ucsd.edu
 ```
-
+After transferring the key to our remote server we are able to login without entering our password.
 ```
 [phn014@ieng6-203]:~:40$ cd .ssh
 [phn014@ieng6-203]:.ssh:41$ ls
@@ -85,6 +85,7 @@ authorized_keys
 [phn014@ieng6-203]:.ssh:42$ pwd
 /home/linux/ieng6/oce/4m/phn014/.ssh
 ```
+Here we use ls to list the files in the .ssh subdirectory and can see that our public key is named authorized_keys. Additionally by printing the working directory we can see that our keys absolute path is: /home/linux/ieng6/oce/4m/phn014/.ssh/authorized_keys.
 
 # Lab 1 Remote Access and FileSystem
 
