@@ -106,10 +106,11 @@ Outside the root directory:
 [user@sahara ~/lecture1]$ cd
 [user@sahara ~]$
 ```
-As shown above, using cd with no commands does not result in an error but also does not output anything. If you use cd in the root directory nothing occurs; however, if you use it outside the root directory it changes the working directory to be one layer up.
+As shown above, using cd with no commands does not result in an error but also does not output anything. If you use cd in the root directory the current directory does not change; however, if you use it outside the root directory it changes the working directory to be one layer up.
 
 
 **Using cd with a directory as an argument**
+With the root directory as the working directory:
 ```
 [user@sahara ~]$ cd lecture1
 [user@sahara ~/lecture1]$
@@ -118,6 +119,7 @@ Here we can see that despite cd not outputting anything there was no error eithe
 
 
 **Using cd with a file as an argument**
+With the root directory as the working directory:
 ```
 [user@sahara ~/lecture1]$ cd Hello.java
 bash: cd: Hello.java: Not a directory
