@@ -190,7 +190,7 @@ java Hello messages/en-us.txt
 [user@sahara ~/lecture1]$
 ```
 
-With two valid files given:
+With more than one valid file given:
 ```
 [user@sahara ~/lecture1]$ cat README Hello.java
 To use this program:
