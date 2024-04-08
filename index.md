@@ -1,5 +1,3 @@
-# Lab 1 Remote Access and FileSystem
-
 # Lab 2 Servers and SSH Keys
 
 ## Background and Code
