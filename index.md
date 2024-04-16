@@ -56,7 +56,7 @@ When going to this url the method handleRequest is called with the url: http://l
 
 Second message being sent:
 ![alt text](https://github.com/PierceNguyen/cse15l-lab-reports/blob/main/Images/Lab2/addMessage-ex2.png?raw=true)
-When going to this url the method handleRequest is called with the url: localhost:4000/add-message?s=How%20are%20you&user=yash as its parameter. Since the path is /add-message after the host, the else statement gets called which then changes the class variable messageBoard to now include a new string with the format: user: message or in this case yash: How are you. Then the entire Arraylist<String> is printed to the website. The only class variable that changes is the messageBoard variable. 
+When going to this url the method handleRequest is called with the url: http://localhost:4000/add-message?s=How%20are%20you&user=yash as its parameter. Since the path is /add-message after the host, the else statement gets called which then changes the class variable messageBoard to now include a new string with the format: user: message or in this case yash: How are you. Then the entire Arraylist<String> is printed to the website. The only class variable that changes is the messageBoard variable. 
 
 ## Part 2
 ```
