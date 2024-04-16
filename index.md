@@ -60,15 +60,11 @@ When going to this url the method handleRequest is called with the url: localhos
 
 ## Part 2
 ```
-pninv@PHN-Evo MINGW64 ~/.ssh
-$ ls
-id_ed25519  id_ed25519.pub  known_hosts
-
-pninv@PHN-Evo MINGW64 ~/.ssh
-$ pwd
-/c/Users/pninv/.ssh
+pninv@PHN-Evo MINGW64 /c/users/pninv/.ssh
+$ ls /c/users/pninv/.ssh/id_ed25519.pub
+/c/users/pninv/.ssh/id_ed25519.pub
 ```
-Here we use ls to list the files in the .ssh subdirectory and can see that our private key ends with a .pub. Additionally by printing the working directory we can see that our keys absolute path is: /c/Users/pninv/.ssh/id_ed25519.pub. 
+Here we use ls to see the absolute path of the public key and can see that our public key ends with a .pub. Additionally we can see that our keys absolute path is: /c/Users/pninv/.ssh/id_ed25519.pub. 
 ```
 pninv@PHN-Evo MINGW64 /c/users/pninv/.ssh
 $ ssh phn014@ieng6.ucsd.edu
@@ -77,13 +73,12 @@ Hello phn014, you are currently logged into ieng6-203.ucsd.edu
 ```
 After transferring the key to our remote server we are able to login without entering our password.
 ```
-[phn014@ieng6-203]:~:40$ cd .ssh
-[phn014@ieng6-203]:.ssh:41$ ls
-authorized_keys
-[phn014@ieng6-203]:.ssh:42$ pwd
-/home/linux/ieng6/oce/4m/phn014/.ssh
+[phn014@ieng6-203]:.ssh:78$ ls /home/linux/ieng6/oce/4m/phn014/.ssh/authorized_keys
+/home/linux/ieng6/oce/4m/phn014/.ssh/authorized_keys
 ```
-Here we use ls to list the files in the .ssh subdirectory and can see that our public key is named authorized_keys. Additionally by printing the working directory we can see that our keys absolute path is: /home/linux/ieng6/oce/4m/phn014/.ssh/authorized_keys.
+Here we use ls to see the absolute path of the authorized keys. Additionally we can see that our keys absolute path is: /home/linux/ieng6/oce/4m/phn014/.ssh/authorized_keys. 
+
+In our week 2 and 3 labs I learned how to connect into remote servers using ssh. I also learned how to generate public and private keys to authenticate my computer so I didn't need to type in my password every time I logged on to the server. 
 
 <div style="page-break-after: always"></div>
 
