@@ -90,52 +90,54 @@ This week in CSE15L we learned various terminal commands such as ``cd``, ``ls`` 
 
 ## Command: cd
 
-**Using cd with no commands**
+**Using cd with no arguments**
 
 With the root directory as the working directory:
 ```
-[user@sahara ~]$ cd
-[user@sahara ~]$
+[user@sahara /]$ cd 
+[user@sahara /]$ 
 ```
 Outside the root directory:
 ```
-[user@sahara ~/lecture1]$ cd
-[user@sahara ~]$
+[user@sahara ~/lecture1]$ cd 
+[user@sahara ~]$ 
 ```
-As shown above, using cd with no commands does not result in an error but also does not output anything. If you use cd in the root directory the current directory does not change; however, if you use it outside the root directory it changes the working directory to be one layer up.
+As shown above, using cd with no arguments does not result in an error but also does not output anything. If you use cd in the root directory the current directory does not change; however, if you use it outside the root directory it changes the working directory to be one layer up.
 
 
 **Using cd with a directory as an argument**
 With the root directory as the working directory:
 ```
-[user@sahara ~]$ cd lecture1
-[user@sahara ~/lecture1]$
+[user@sahara /]$ cd /home/lecture1
+[user@sahara ~/lecture1]$ 
 ```
 Here we can see that despite cd not outputting anything there was no error either. Originally, we were in the root directory however upon passing a valid directory we were able to change our working directory to be the lecture1 folder. 
 
 
 **Using cd with a file as an argument**
-With the root directory as the working directory:
+With /home/lecture1 as the working directory:
 ```
 [user@sahara ~/lecture1]$ cd Hello.java
 bash: cd: Hello.java: Not a directory
 [user@sahara ~/lecture1]$
 ```
-Here we can see that cd did output something this time and it is an error. This is an error since cd can only be used to open directories and cannot be used to open files. 
+Here we can see that cd did output something this time and it is an error. This is an error since cd can only be used to change your current working directory and cannot be used to open files. 
 
 
 ## Command: ls
 
-**Using ls with no commands**
+**Using ls with no arguments**
+With /home/lecture1 as the working directory:
 ```
 [user@sahara ~/lecture1]$ ls
 Hello.class  Hello.java  messages  README
 [user@sahara ~/lecture1]$
 ```
-As shown above, using ls with no commands does not result in an error and prints a list of all the files and folders in the working directory to terminal. Additionally folders are colored blue and bolded. 
+As shown above, using ls with no arguments does not result in an error and prints a list of all the files and folders in the working directory to terminal.
 
 
 **Using ls with a directory as an argument**
+With /home/lecture1 as the working directory
 ```
 [user@sahara ~/lecture1]$ ls messages
 en-us.txt  es-mx.txt  vi.txt  zh-cn.txt
@@ -145,6 +147,7 @@ Using ls with a directory as an argument prints a list of all the files and fold
 
 
 **Using ls with a file as an argument**
+With /home/lecture1 as the working directory
 ```
 [user@sahara ~/lecture1]$ ls Hello.java
 Hello.java
@@ -154,7 +157,8 @@ Using ls with a file as an argument does not throw an error and prints out the n
 
 ## Command: cat
 
-**Using cat with no commands**
+**Using cat with no arguments**
+With /home/lecture1 as the working directory
 ```
 [user@sahara ~/lecture1]$ cat
 prints out what i type
@@ -162,10 +166,11 @@ prints out what i type
 ^C
 [user@sahara ~/lecture1]$
 ```
-If no commands are given cat does not throw an error but simply copies what you write in terminal and prints it out in terminal. To get back to the command line you need to hit control + c.
+If no arguments are given cat does not throw an error but simply copies what you write in terminal and prints it out in terminal. To get back to the command line you need to hit control + c.
 
 
 **Using cat with a directory as an argument**
+With /home/lecture1 as the working directory
 ```
 [user@sahara ~/lecture1]$ cat messages
 cat: messages: Is a directory
@@ -175,6 +180,7 @@ Using cat with a directory as an argument throws an error which states that the 
 
 
 **Using cat with a file as an argument**
+With /home/lecture1 as the working directory
 
 With one valid file given:
 ```
