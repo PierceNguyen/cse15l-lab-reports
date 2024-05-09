@@ -1,3 +1,108 @@
+# Lab 3 Bugs and Commands
+
+## Background and Code
+
+For this lab we looked at a buggy program and created tests for various functions in the program and fixed some of the functions. 
+
+## Part 1: Bugs
+
+Here I wrote a JUnit test for the reverseInPlace function where the test is meant to fail due to the reverseInPlace function being buggy/incorrect. 
+```
+//Code that is tested
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+
+//Code from Testing java file
+@Test 
+	public void CustomtestReverseInPlaceWrong() {
+    int[] input1 = {1,2,3};
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{3,2,1}, input1);
+	}
+```
+
+Here I wrote a JUnit test for the reverseInPlace function where the test is meant to pass despite the reverseInPlace function being buggy/incorrect. 
+```
+//Code that is tested
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+
+//Code from Testing java file
+@Test 
+	public void CustomtestReverseInPlaceRight() {
+    int[] input1 = {1,2,3,2,1};
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{1,2,3,2,1}, input1);
+	}
+```
+
+Here is the output from running both JUnit tests with the 2nd test passing and the first test failing. 
+```
+$ bash test.sh
+JUnit version 4.13.2
+..E
+Time: 0.015
+There was 1 failure:
+1) CustomtestReverseInPlaceWrong(ArrayTests)
+arrays first differed at element [2]; expected:<1> but was:<3>
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:78)
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:28)
+        at org.junit.Assert.internalArrayEquals(Assert.java:534)
+        at org.junit.Assert.assertArrayEquals(Assert.java:418)
+        at org.junit.Assert.assertArrayEquals(Assert.java:429)
+        at ArrayTests.CustomtestReverseInPlaceWrong(ArrayTests.java:24)
+        ... 30 trimmed
+Caused by: java.lang.AssertionError: expected:<1> but was:<3>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at org.junit.internal.ExactComparisonCriteria.assertElementsEqual(ExactComparisonCriteria.java:8)
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:76)
+        ... 36 more
+
+FAILURES!!!
+Tests run: 2,  Failures: 1
+```
+
+Now that we see our function failing some tests, lets fix the function so it works as intended. 
+```
+  //buggy function
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```
+```
+  //fixed function
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length / 2; i += 1) {
+      int temp = arr[i];
+      arr[i] = arr[arr.length - i - 1];
+      arr[arr.length - i - 1] = temp;
+    }
+  }
+```
+
+The original function was wrong since it would overwrite the first half the the array with the 2nd half effectively mirroring the array
+around the midpoint. To fix this I just swapped the outer array elements and worked my way to the middle to ensure that none of the array
+elements were overwritten before they were swapped. With this fix the function should be able to reverse arrays correctly now. 
+
+## Part 2 - Researching Commands
+
+Now lets explore the grep command in more detail and explore some of the command-line options we can pass to these commands. 
+
+
+
+<div style="page-break-after: always"></div>
+
 # Lab 2 Servers and SSH Keys
 
 ## Background and Code
