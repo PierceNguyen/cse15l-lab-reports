@@ -99,8 +99,68 @@ elements were overwritten before they were swapped. With this fix the function s
 
 Now lets explore the grep command in more detail and explore some of the command-line options we can pass to these commands. 
 
+#### grep -i
+Using the grep -i command allows grep to ignore case. Using this on a file would give the following result. It displays all the lines that match the string "portland" disregarding case. 
+```
+\docsearch\technical> grep -i "portland" ./911report/chapter-1.txt
+    For those heading to an airport, weather conditions could not have been better for a safe and pleasant journey. Among the travelers were Mohamed Atta and Abdul Aziz al Omari, who arrived at the airport in Portland, Maine.
+    Boston: American 11 and United 175. Atta and Omari boarded a 6:00 A.M. flight from Portland to Boston's Logan International Airport.
+    While Atta had been selected by CAPPS in Portland, three members of his hijacking team-Suqami, Wail al Shehri, and Waleed al Shehri-were selected in Boston. Their selection affected only the handling of their checked bags, not their screening at the checkpoint. All five men cleared the checkpoint and made their way to the gate for American 11. Atta, Omari, and Suqami took their seats in business class (seats 8D, 8G, and 10B, respectively). The Shehri brothers had adjacent seats in row 2 (Wail in 2A, Waleed in 2B), in the firstclass cabin. They boarded American 11 between 7:31 and 7:40. The aircraft pushed back from the gate at 7:40.
+```
+Using the grep -i command on a directory as shown below throws an error stating it doesn't take a directory as is.
+```
+docsearch\technical> grep -i "portland" ./911report/             
+/usr/bin/grep: ./911report/: Is a directory
+```
+
+#### grep -v
+Using the grep -v command allows you to look for lines that do not have the provided string. Using it on a file is shown below. I shortened it since the output was extremely long but all of the lines grep output do not contain the word "the". 
+```
+docsearch\technical> grep -v "the" ./911report/preface.txt
 
 
+
+            PREFACE
+                Democrats chosen by elected leaders from our nation's capital at a time of great
+                avoid such tragedy again?
+                27, 2002).
+            Our mandate was sweeping. The law directed us to investigate "facts and circumstances
+                to intelligence agencies, law enforcement agencies, diplomacy, immigration issues
+                reviewed more than 2.5 million pages of documents and interviewed more than 1,200
+...
+```
+Using the grep -v command on a directory as shown below throws an error stating it doesn't take a directory as is.
+```
+docsearch\technical> grep -v "the" .\plos\                        
+/usr/bin/grep: .\plos\: Is a directory
+```
+
+#### grep -n
+Using the grep -n command allows you to look for line number of lines with matching strings. We can see this below where using it on a file returns the line number of the line with the matching word along with the line itself. 
+```
+docsearch\technical> grep -n "richer" .\plos\journal.pbio.0020001.txt
+29:        It is rather obvious that richer countries are able to invest more resources in science
+```
+Using the grep -n command on a directory as shown below throws an error stating it doesn't take a directory as is.
+```
+docsearch\technical> grep -n "richer" .\plos\
+/usr/bin/grep: .\plos\: Is a directory
+```
+
+#### grep -w
+Using the grep -w command allows you to look for only the exact matching string in a file instead of any word containing the word. We can see this below where using it on a file returns the lines with an exact matching word. 
+```
+docsearch\technical> grep -w "clearly" .\plos\journal.pbio.0020001.txt    
+        (SCI). North America and Europe clearly dominate the number of scientific publications
+            North America and Europe clearly dominate the number of scientific
+```
+Using the grep -w command on a directory as shown below throws an error stating it doesn't take a directory as is.
+```
+docsearch\technical> grep -w "clearly" .\plos\                            
+/usr/bin/grep: .\plos\: Is a directory
+```
+
+For the various grep commands I referenced https://www.freecodecamp.org/news/grep-command-in-linux-usage-options-and-syntax-examples/ for basic information on how the commands worked. 
 <div style="page-break-after: always"></div>
 
 # Lab 2 Servers and SSH Keys
