@@ -1,3 +1,32 @@
+# Lab 4 Vim
+
+## Background and Code
+
+For this lab we used vim along with various other commands and shortcuts to work on completing a task as efficiently as possible.
+
+#### Command 1:
+![alt text](https://github.com/PierceNguyen/cse15l-lab-reports/blob/main/Images/gitex1.png)
+
+Keys Pressed: ```ssh phn014@ieng6.ucsd.edu```
+
+The ssh command allows me to log into a remote computer and I specifically logged into my account on the ieng6.ucsd.edu server. 
+
+#### Command 2
+![alt text](https://github.com/PierceNguyen/cse15l-lab-reports/blob/main/Images/gitex2.png)
+
+Keys Pressed: ```git clone <Control> v```
+
+The git clone command allows me to clone a repository on github to my local machine. I had already copied the github ssh link (git@github.com:PierceNguyen/lab7.git) before so it was in my clipboard and I could paste the link with ```<control> v```. 
+
+#### Command 3
+![alt text](https://github.com/PierceNguyen/cse15l-lab-reports/blob/main/Images/gitex3.png)
+
+Keys Pressed: ```cd lab7 <Enter> bash test.sh <Enter>```
+
+Since I was outside the lab7 directory I entered it with the cd command. Then once inside the ran the tests by using bash to run the test.sh file which would compile the java files and then run the test java file.  
+
+<div style="page-break-after: always"></div>
+
 # Lab 3 Bugs and Commands
 
 ## Background and Code
