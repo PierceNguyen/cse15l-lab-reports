@@ -5,7 +5,7 @@
 For this lab we used vim along with various other commands and shortcuts to work on completing a task as efficiently as possible.
 
 #### Command 1:
-![alt text](https://github.com/PierceNguyen/cse15l-lab-reports/blob/main/Images/gitex1.png)
+<img src="Images/gitex1.png" class="img-responsive" alt=""> </div>
 
 Keys Pressed: ```ssh phn014@ieng6.ucsd.edu```
 
