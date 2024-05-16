@@ -23,7 +23,29 @@ The git clone command allows me to clone a repository on github to my local mach
 
 Keys Pressed: ```cd lab7 <Enter> bash test.sh <Enter>```
 
-Since I was outside the lab7 directory I entered it with the cd command. Then once inside the ran the tests by using bash to run the test.sh file which would compile the java files and then run the test java file.  
+Since I was outside the lab7 directory I entered it with the cd command. Then once inside I ran the tests by using bash to run the test.sh file which would compile the java files and then run the test java file. A test failing indicates a faulty implementation of the function. 
+
+#### Command 4
+![alt text](https://github.com/PierceNguyen/cse15l-lab-reports/blob/main/Images/gitex4-2.png)
+![alt text](https://github.com/PierceNguyen/cse15l-lab-reports/blob/main/Images/gitex4-1.png)
+
+Keys Pressed: ```vim List <Tab> .java <Enter> :44 <Enter> e r 2 <ESC> :wq <Enter> ```
+
+Using vim then the filename allows me to open the java file in vim. I used ```<Tab>``` to autocomplete the file name. Once inside vim using ```:44``` allows me to go to the 44th line where the fix I need to make is located. Then ```e r 2``` allows me to jump to the end of the word and replace the last letter of the word with 2. Then using ```:wq``` allows me to exit and save the file. 
+
+#### Command 5
+![alt text](https://github.com/PierceNguyen/cse15l-lab-reports/blob/main/Images/gitex5.png)
+
+Keys Pressed: ```bash test.sh <Enter>```
+
+I ran the tests by using bash to run the test.sh file which would compile the java files and then run the test java file. The output indicates that with the function now fixed, it can pass all the tests.
+
+#### Command 6
+![alt text](https://github.com/PierceNguyen/cse15l-lab-reports/blob/main/Images/gitex6.png)
+
+Keys Pressed: ```git add . <Enter> git commit -m "fixed bug" <Enter> git push <Enter>```
+
+Using ```git add .``` adds all files with changes to the next git commit. Then ```git commit -m "fixed bug"``` creates a git commit with the commit message of "fixed bug". Finally ```git push``` pushes these changes to Github. 
 
 <div style="page-break-after: always"></div>
 
