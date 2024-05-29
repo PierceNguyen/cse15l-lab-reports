@@ -7,21 +7,21 @@ For this lab we used vim along with various other commands and shortcuts to work
 #### Command 1:
 ![alt text](Images/gitex1.png)
 
-Keys Pressed: ```ssh phn014@ieng6.ucsd.edu```
+Keys Pressed: ```ssh <space> phn014@ieng6.ucsd.edu```
 
 The ssh command allows me to log into a remote computer and I specifically logged into my account on the ieng6.ucsd.edu server. 
 
 #### Command 2
 ![alt text](Images/gitex2.png)
 
-Keys Pressed: ```git clone <Control> v```
+Keys Pressed: ```git <space> clone <space> <Control> v```
 
 The git clone command allows me to clone a repository on github to my local machine. I had already copied the github ssh link (git@github.com:PierceNguyen/lab7.git) before so it was in my clipboard and I could paste the link with ```<control> v```. 
 
 #### Command 3
 ![alt text](Images/gitex3.png)
 
-Keys Pressed: ```cd lab7 <Enter> bash test.sh <Enter>```
+Keys Pressed: ```cd <space> lab7 <Enter> bash <space> test.sh <Enter>```
 
 Since I was outside the lab7 directory I entered it with the cd command. Then once inside I ran the tests by using bash to run the test.sh file which would compile the java files and then run the test java file. A test failing indicates a faulty implementation of the function. 
 
@@ -29,21 +29,21 @@ Since I was outside the lab7 directory I entered it with the cd command. Then on
 ![alt text](Images/gitex4-2.png)
 ![alt text](Images/gitex4-1.png)
 
-Keys Pressed: ```vim List <Tab> .java <Enter> :44 <Enter> e r 2 <ESC> :wq <Enter> ```
+Keys Pressed: ```vim <space> List <Tab> .java <Enter> :44 <Enter> e r 2 <ESC> :wq <Enter> ```
 
 Using vim then the filename allows me to open the java file in vim. I used ```<Tab>``` to autocomplete the file name. Once inside vim using ```:44``` allows me to go to the 44th line where the fix I need to make is located. Then ```e r 2``` allows me to jump to the end of the word and replace the last letter of the word with 2. Then using ```:wq``` allows me to exit and save the file. 
 
 #### Command 5
 ![alt text](Images/gitex5.png)
 
-Keys Pressed: ```bash test.sh <Enter>```
+Keys Pressed: ```bash <space> test.sh <Enter>```
 
 I ran the tests by using bash to run the test.sh file which would compile the java files and then run the test java file. The output indicates that with the function now fixed, it can pass all the tests.
 
 #### Command 6
 ![alt text](Images/gitex6.png)
 
-Keys Pressed: ```git add . <Enter> git commit -m "fixed bug" <Enter> git push <Enter>```
+Keys Pressed: ```git <space> add <space> . <Enter> git <space> commit <space> -m <space> "fixed <space> bug" <Enter> git <space> push <Enter>```
 
 Using ```git add .``` adds all files with changes to the next git commit. Then ```git commit -m "fixed bug"``` creates a git commit with the commit message of "fixed bug". Finally ```git push``` pushes these changes to Github. 
 
