@@ -1,3 +1,84 @@
+# Lab 5 Putting it All Together
+
+## Piazza Post
+
+#### Student Post:
+I was checking my BST implementation and when compiling and running my tests via a bash script I get the following warning and error. I'm not sure what the exception is since I passed javac with -cp and the classpath. Also for the warning on unsafe operations, I looked into it online and I think its because I use generics in my implmentation but I'm not sure where the issue is since the output doesn't give a line number error anywhere. I attached a screenshot below showing the error. 
+![alt text](Images/unsafe_java.png)
+
+#### TA Response:
+For the exception make sure you pass in the correct filepath for both hamcrest and junit for the javac command. Also the unsafe/unchecked operations are usually caused by either creating something like an ArrayList without a type or casting an object to a generic type without checking first.
+
+#### Student Response:
+I was able to fix the exception by changing the classpath. I copied the classpath from an old assignment but it used a different version of hamcrest so the filepath was incorrect. I was also able to get rid of the warning by changing an unchecked generic type cast to use wildcards to check before casting the object. I attached a screenshot and other information incase anyone else encounters a similar error.
+
+File Structure:
+home
+ - libs
+     - hamcrest-2.2.jar
+     - junit-4.13.2.jar
+ - MyBST.java
+ - MyBST.class
+ - CustomTester.java
+ - CustomTester.class
+ - test.sh
+ - MyBST$MyBSTNode.class
+
+Test.sh File content
+
+**Before**
+```
+javac -cp ".;libs\hamcrest-1.3.jar;libs/junit-4.13.2.jar" *.java
+java -cp ".;libs\hamcrest-1.3.jar;libs/junit-4.13.2.jar" org.junit.runner.JUnitCore CustomTester
+```
+**After**
+```
+javac -cp ".;libs\hamcrest-2.2.jar;libs/junit-4.13.2.jar" *.java
+java -cp ".;libs\hamcrest-2.2.jar;libs/junit-4.13.2.jar" org.junit.runner.JUnitCore CustomTester
+```
+
+MyBST.java content
+I only included the code part I changed since the whole file is over 200 lines long
+**Before**
+```
+public boolean equals(Object obj) {
+            if (!(obj instanceof MyBSTNode))
+                return false;
+
+            MyBSTNode<K, V> comp = (MyBSTNode<K, V>) obj;
+
+            return ((this.getKey() == null ? comp.getKey() == null :
+                    this.getKey().equals(comp.getKey()))
+                    && (this.getValue() == null ? comp.getValue() == null :
+                    this.getValue().equals(comp.getValue())));
+}
+```
+**After**
+```
+public boolean equals(Object obj) {
+            if (!(obj instanceof MyBSTNode))
+                return false;
+
+            MyBSTNode<?, ?> comp = (MyBSTNode<?, ?>) obj;
+
+            return ((this.getKey() == null ? comp.getKey() == null :
+                    this.getKey().equals(comp.getKey()))
+                    && (this.getValue() == null ? comp.getValue() == null :
+                    this.getValue().equals(comp.getValue())));
+}
+```
+
+Screenshot of the otuput:
+![alt text](Images/safe_java.png)
+
+To run the code I just ran ```bash test.sh``` in terminal.
+
+## Reflection
+
+Soemthing cool that I learned in the past few weeks was that I can execute commands in terminal in Java. While I know that it isn't always economical to do so I found it interesting that you can do so. 
+
+<div style="page-break-after: always"></div>
+
 # Lab 4 Vim
 
 ## Background and Code
