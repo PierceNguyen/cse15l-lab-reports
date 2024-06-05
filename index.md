@@ -4,6 +4,7 @@
 
 #### Student Post:
 I was checking my BST implementation and when compiling and running my tests via a bash script I get the following warning and error. I'm not sure what the exception is since I passed javac with -cp and the classpath. Also for the warning on unsafe operations, I looked into it online and I think its because I use generics in my implmentation but I'm not sure where the issue is since the output doesn't give a line number error anywhere. I attached a screenshot below showing the error. 
+
 ![alt text](Images/unsafe_java.png)
 
 #### TA Response:
