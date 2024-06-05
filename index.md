@@ -40,6 +40,7 @@ java -cp ".;libs\hamcrest-2.2.jar;libs/junit-4.13.2.jar" org.junit.runner.JUnitC
 
 MyBST.java content
 I only included the code part I changed since the whole file is over 200 lines long
+
 **Before**
 ```
 public boolean equals(Object obj) {
@@ -70,6 +71,7 @@ public boolean equals(Object obj) {
 ```
 
 Screenshot of the otuput:
+
 ![alt text](Images/safe_java.png)
 
 To run the code I just ran ```bash test.sh``` in terminal.
