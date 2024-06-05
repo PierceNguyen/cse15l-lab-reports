@@ -78,7 +78,7 @@ To run the code I just ran ```bash test.sh``` in terminal.
 
 ## Reflection
 
-Soemthing cool that I learned in the past few weeks was that I can execute commands in terminal in Java. While I know that it isn't always economical to do so I found it interesting that you can do so. 
+Soemthing cool that I learned in the past few weeks was that I can execute commands in terminal directly from Java code. While I know that it isn't always economical to do so I found it interesting how this can add a whole new dimension to what Java can do.  
 
 <div style="page-break-after: always"></div>
 
